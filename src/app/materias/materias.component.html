@@ -1,0 +1,23 @@
+<h2>Mis Materias</h2>
+<ul class="materias">
+  <li *ngFor="let materia of materias"
+  [class.selected]="materia === selectedMateria"
+  (click)="onSelect(materia)">
+    <span class="badge">{{materia.id}}</span> {{materia.name}}
+  </li>
+</ul>
+
+<app-materia-detail [materia]="selectedMateria"></app-materia-detail>
+
+<!--
+<div *ngIf="selectedMateria">
+ 
+  <h2>{{selectedMateria.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedMateria.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedMateria.name" placeholder="name">
+    </label>
+  </div>
+ 
+</div>-->
